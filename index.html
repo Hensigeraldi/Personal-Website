@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hensi Geraldi Irot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo1.jpeg" alt="Logo">
+            <span>Nzyy.</span>
+        </div>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#skills">Skills</a>
+            <a href="#certificates">Certificates</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </nav>
+    
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div id="particles-js"></div>
+            <div class="home-content">
+            <h1 data-aos="fade-right">Hallo,</h1>
+                <h2 data-aos="fade-right" data-aos-delay="200" class="typing-container">
+                    I'm <span class="typing-text"></span>
+                    <span class="cursor">|</span>
+                </h2><br>
+            <p data-aos="fade-right" data-aos-delay="400">I am a web developer who specializes in building interactive, responsive, and functional websites for a variety of digital needs.</p><br>
+            <button class="border-button" data-aos="fade-up" data-aos-delay="600" onclick="scrollToAbout()">
+                    <span class="btn-text">More About Me</span>
+                    <span class="arrow">&#8594;</span>
+                </a>
+            </button> <br><br>
+            <div class="social-icons">
+                <!-- Social icons dengan efek animasi -->
+                <a href="https://wa.me/082239791258" target="_blank" aria-label="WhatsApp" data-aos="zoom-in" data-aos-delay="800">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/hensigeraldi_?igsh=MTNyemJtMHJ4MW1neA==" target="_blank" aria-label="Instagram" data-aos="zoom-in" data-aos-delay="900">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1EoQDvdb29/" target="_blank" aria-label="Facebook" data-aos="zoom-in" data-aos-delay="1000">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hensiirot100@gmail.com&su=Halo%20Hensi&body=Hai%20Hensi%2C%20saya%20tertarik%20dengan%20portfolio%20kamu!" target="_blank" aria-label="Email" data-aos="zoom-in" data-aos-delay="1100">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <img src="images/me.jpg" class="profile-img image-morph" alt="Profile Photo" data-aos="zoom-in-left" data-aos-delay="300">
+    </section>
+
+    <!-- About Section dengan Animasi -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-img" data-aos="zoom-out-right" data-aos-delay="200">
+                <div class="image-morph">
+                    <img src="images/me2.jpg" alt="About Me">
+                </div>
+            </div>
+            <div class="about-content" data-aos="zoom-out-left" data-aos-delay="400">
+                <h2 class="text-morph">About Me</h2>
+                <p data-aos="fade-up" data-aos-delay="600">Hello, I am Hensi Geraldi Irot, I come from Sulawesi and was born in Papua Biak Numfor and I am very interested in fullstack developers which allows me to develop responsive and interactive interface websites.</p>
+                <div class="about-details">
+                    <div class="detail-item" data-aos="flip-left" data-aos-delay="800">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Education</h3>
+                        <p>Informatics Enginnering<br>Manado State Polytechnic</p>
+                    </div>
+                    <div class="detail-item" data-aos="flip-right" data-aos-delay="1000">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Experience</h3>
+                        <p>2019 - 3 Months<br>Pt Wapoga Mutiara Industri Biak Numfor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div id="portfolio-particles-js"></div>
+        <div class="portfolio-container">
+            <h2 class="section-title" data-aos="fade-down">My Project Experience</h2>
+            <p class="section-subtitle" data-aos="fade-down" data-aos-delay="200">projects I have worked on so far</p>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-image image-morph"          onclick="openModal(this)">
+                        <img src="images/SAW.png" alt="projectsaw">
+                    </div>
+                    <div class="project-content">
+                        <h3>SAW calculation project</h3>
+                        <p>Semester 6 Decision Making System Course Project, namely for Scholarship Selection Using the SAW Method</p>
+                        <a class="project-link">php, HTML5, CSS3, Bootstrap, and Java Script</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="project-image image-morph"          onclick="openModal(this)">
+                        <img src="images/input.png" alt="projectsaw">
+                    </div>
+                    <div class="project-content">
+                        <h3>Form Input data</h3>
+                        <p>In this data input section, prospective scholarship recipients will fill out the form according to the provisions and data listed.</p>
+                        <a class="project-link">php, HTML5, CSS3, Bootstrap, and Java Script</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="project-image image-morph"          onclick="openModal(this)">
+                        <img src="images/Hasilsaw.png" alt="projectsaw">
+                    </div>
+                    <div class="project-content">
+                        <h3>Scholarship Selection Results</h3>
+                        <p>After the prospective scholarship recipients fill out the specified form, the scholarship selection results will appear.<p>
+                          <a class="project-link">php, HTML5, CSS3, Bootstrap, and Java Script</a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="project-image image-morph"          onclick="openModal(this)">
+                        <img src="images/Kelembapanprediksi.png" alt="projectsaw">
+                    </div>
+                    <div class="project-content">
+                        <h3>Soil moisture monitoring and water prediction using machine learning</h3>
+                        <p>My project in the Machine Learning course is designed to read soil moisture using soil moisture and predict liters of water using random forest machine learning to produce healthy and high-quality plants.</p>
+                        <a href="#" class="project-link">Esp32, Python Random Forest, Frontend : Html5 Css3 and javascript</a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="project-image image-morph"          onclick="openModal(this)">
+                        <img src="images/footer.png" alt="projectsaw">
+                    </div>
+                    <div class="project-content">
+                        <h3>Footer</h3>
+                        <p>In this footer section to display the development team, a team that is committed to presenting the best technology solutions for farmers. Contact us for questions to us or to work together and about this system.</p>
+                        <a href="#" class="project-link">Frontend : Html5 Css3 and javascript</a>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="project-image image-morph"          onclick="openModal(this)">
+                        <img src="images/commerce.png" alt="projectsaw">
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce</h3>
+                        <p>My project this time is also a shopping website for various foods and drinks, a responsive display designed to give users a good shopping experience and will later be promoted to MSME partners.</p>
+                        <a href="https://team8.codefour22.kepri.pro/" class="project-link">Visit</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+        <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="skills-container">
+            <h2 class="section-title" data-aos="fade-down">Technical Skills</h2>
+            <p class="section-subtitle" data-aos="fade-down" data-aos-delay="200">Tools and technologies I work with</p>
+            
+            <div class="skills-scroll-container">
+                <div class="skills-grid">
+                    <!-- HTML -->
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                        <p>Semantic markup, accessibility, SEO optimization</p>
+                    </div>
+                    
+                    <!-- CSS -->
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="350">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                        <p>Flexbox, Grid, Animations, Responsive design</p>
+                    </div>
+                    
+                    <!-- JavaScript -->
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                        <p>DOM manipulation, API integration</p>
+                    </div>
+                    
+                    <!-- PHP -->
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="450">
+                        <i class="fab fa-php"></i>
+                        <h3>PHP</h3>
+                        <p>Laravel, REST APIs, Server-side scripting</p>
+                    </div>
+                    
+                    <!-- MySQL -->
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                        <i class="fas fa-database"></i>
+                        <h3>MySQL</h3>
+                        <p>Database design</p>
+                    </div>
+                    
+                    <!-- Python -->
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="550">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                        <p>Automation, Scripting</p>
+                    </div>
+                    
+                    <!-- ESP32 -->
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                        <i class="fas fa-microchip"></i>
+                        <h3>ESP32</h3>
+                        <p>IoT development, Sensor integration</p>
+                    </div>
+                    
+                    <!-- Machine Learning -->
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="650">
+                        <i class="fas fa-robot"></i>
+                        <h3>Machine Learning</h3>
+                        <p>Predictive modeling, Data preprocessing</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span class="scroll-arrow left-arrow" onclick="scrollSkills(-1)">&#10094;</span>
+                <span class="scroll-dots"></span>
+                <span class="scroll-arrow right-arrow" onclick="scrollSkills(1)">&#10095;</span>
+            </div>
+        </div>
+    </section>
+    <!-- Certificates Section -->
+    <section class="certificates" id="certificates">
+        <div class="certificates-container">
+            <h2 class="section-title" data-aos="fade-down">Certificates</h2>
+            <p class="section-subtitle" data-aos="fade-down" data-aos-delay="200">My achievements</p>
+            
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="certificate-image">
+                        <img src="images/1.jpg" alt="Certificate 1">
+                        <div class="certificate-overlay">
+                            <h4>Sertifikat Belajar dasar Pemograman Java</h4>
+                            <p>Sertifikat Kompetensi Kelulusan By Dicoding<br>2024</p>
+                            <a href="https://drive.google.com/file/d/1iKaug5pakN-tZFpuKAYQfP2H1aaYgXzz/view?usp=drive_link" style="font-weight: bold; text-decoration: none; color: inherit;">details for my certificate</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 2 -->
+                <div class="certificate-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="certificate-image">
+                        <img src="images/2.jpg" alt="Certificate 2">
+                        <div class="certificate-overlay">
+                            <h4>Sertifikat Junior Web Developer (JWD)</h4>
+                            <p>Sertifikat kompetensi by Vocational School Graduate Academy (VSGA)<br>2023</p>
+                            <a href="https://drive.google.com/file/d/1q4NjaMuGM-oD_8q_HfNFmJTHWcifHQrc/view?usp=sharing" style="font-weight: bold; text-decoration: none; color: inherit;">details for my certificate</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 3 -->
+                <div class="certificate-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="certificate-image">
+                        <img src="images/3.jpg" alt="Certificate 3">
+                        <div class="certificate-overlay">
+                            <h4>Sertifikat Belajar dasar Pemograman Web</h4>
+                            <p>Sertifikat Kompetensi Kelulusan By Dicoding<br>2024</p>
+                            <a href="https://drive.google.com/file/d/1oZAKGawGg377rlDFG9fCemIwl0tM2vdV/view?usp=sharing" style="font-weight: bold; text-decoration: none; color: inherit;">details for my certificate</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 4 -->
+                <div class="certificate-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="certificate-image">
+                        <img src="images/4.jpg" alt="Certificate 4">
+                        <div class="certificate-overlay">
+                            <h4>Sertifikat Javascript Introduction</h4>
+                            <p>Sertifikat Kompetensi by Myskill Short Class<br>2024</p>
+                            <a href="https://drive.google.com/file/d/1OTPJfbg6LmMO_bUY7E9r0PGMGW-bR4Kr/view?usp=sharing" style="font-weight: bold; text-decoration: none; color: inherit;">details for my certificate</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tambahkan ini di dalam section certificates -->
+        <div class="slider-controls">
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+       <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo1.jpeg" alt="Logo">
+                    <span>Nzyy.</span>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                        <li><a href="index.html#certificates">Certificates</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                   <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://maps.app.goo.gl/zedZLjGwgmiZR1iF7" target="_blank" style="text-decoration: none; color: inherit;">
+                                Kost Pagar Miring, Manado
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="https://wa.me/6282239791258" target="_blank" style="text-decoration: none; color: inherit;">
+                                +62 822-3979-1258
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hensiirot100@gmail.com&su=Halo%20Hensi&body=Hai%20Hensi%2C%20saya%20tertarik%20dengan%20portfolio%20kamu!" style="text-decoration: none; color: inherit;">
+                                hensiirot100@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-icons">
+                        <a href="https://wa.me/082239791258" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/hensigeraldi_?igsh=MTNyemJtMHJ4MW1neA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1EoQDvdb29/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hensi Geraldi Irot. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <div class="image-modal" id="imageModal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Scripts -->
+    <script>
+
+    // Typing Animation
+        const texts = [
+            "Hensi Geraldi Irot", 
+            "a Frontend Developer",
+            "a Backend Developer"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deleteSpeed = 50;
+        const pauseBetween = 2000;
+
+        function typeText() {
+            const currentText = texts[textIndex];
+            const typingElement = document.querySelector('.typing-text');
+            
+            if (!isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(typeText, pauseBetween);
+                    return;
+                }
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex++;
+                    
+                    if (textIndex === texts.length) {
+                        textIndex = 0;
+                    }
+                }
+            }
+            
+            const speed = isDeleting ? deleteSpeed : typingSpeed;
+            setTimeout(typeText, speed);
+        }
+
+        // Start animation when page loads
+        document.addEventListener('DOMContentLoaded', typeText);
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Tambahkan script ini
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.certificate-card');
+        const totalSlides = slides.length;
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            
+            const grid = document.querySelector('.certificates-grid');
+            const slideWidth = slides[0].offsetWidth;
+            grid.scrollTo({
+                left: slideWidth * currentSlide,
+                behavior: 'smooth'
+            });
+        }
+
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+            } else {
+                currentSlide = 0;
+            }
+            updateSlide();
+        });
+
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+            } else {
+                currentSlide = totalSlides - 1;
+            }
+            updateSlide();
+        });
+
+        // Inisialisasi slide pertama
+        updateSlide();
+        function scrollSkills(direction) {
+            const container = document.querySelector('.skills-scroll-container');
+            const scrollAmount = 300; // Adjust this value as needed
+            
+            if (direction === 1) {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+        }
+        // Di dalam tag script
+        function openModal(element) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const img = element.querySelector('img');
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            document.body.style.overflow = "hidden"; // Prevent scrolling
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // Close modal ketika klik di luar gambar
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        // Fungsi untuk scroll ke section About
+        function scrollToAbout() {
+            const aboutSection = document.getElementById('about');
+            aboutSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Tambahan efek animasi saat scroll (opsional)
+        setTimeout(() => {
+            aboutSection.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    aboutSection.style.transform = 'translateY(0)';
+                }, 100);
+            }, 500);
+        }
+        function adjustAOSSettings() {
+            const isMobile = window.innerWidth <= 768;
+            AOS.init({
+                duration: isMobile ? 600 : 1000, // Durasi lebih pendek di mobile
+                offset: isMobile ? 50 : 120, // Offset lebih kecil di mobile
+                once: true,
+                mirror: false
+            });
+        }
+
+        window.addEventListener('load', adjustAOSSettings);
+        window.addEventListener('resize', adjustAOSSettings);
+
+            // Inisialisasi Particles untuk Section Home
+        particlesJS('particles-js', 
+            {
+                "particles": {
+                    "number": {
+                        "value": 160,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 1,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true
+                    },
+                    "line_linked": {
+                        "enable": false
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": true,
+                        "out_mode": "out"
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "bubble"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "repulse"
+                        }
+                    },
+                    "modes": {
+                        "bubble": {
+                            "distance": 250,
+                            "size": 0,
+                            "duration": 2
+                        },
+                        "repulse": {
+                            "distance": 400,
+                            "duration": 0.4
+                        }
+                    }
+                },
+                "retina_detect": true
+            }
+        );
+
+        // Inisialisasi Particles untuk Section Portfolio
+        particlesJS('portfolio-particles-js',
+            {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle"
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "out_mode": "out"
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        }
+                    },
+                    "modes": {
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            }
+        );
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 1000,
+            once: false,
+            offset: 120,
+            mirror: true,
+            easing: 'ease-in-out-quad'
+        });
+        // Toggle Menu Mobile
+        function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('active');
+        }
+
+        // Tutup menu saat klik di luar
+        document.addEventListener('click', (e) => {
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.querySelector('.menu-toggle');
+        
+        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.remove('active');
+        }
+        });
+
+        // Efek Hover Card 3D
+        document.querySelectorAll('.detail-item').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.transform = `
+                    perspective(1000px)
+                    rotateX(${(y - rect.height/2) / 8}deg)
+                    rotateY(${-(x - rect.width/2) / 8}deg)
+                    scale(1.05)
+                `;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

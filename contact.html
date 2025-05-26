@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Hensi Geraldi Irot</title>
+    <!-- Load style.css terlebih dahulu -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Kemudian contact.css untuk override style tertentu -->
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo1.jpeg" alt="Logo">
+            <span>Nzyy.</span>
+        </div>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About Me</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#certificates">Certificates</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+        
+        <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    </nav>
+    <div class="container"></div>
+         <div class="parallax"></div>
+    </div>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title" data-aos="fade-down">Contact Me</h2>
+            <p class="section-subtitle" data-aos="fade-down" data-aos-delay="200">Get in touch with me</p>
+
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="300">
+                    <div class="contact-form">
+                        <form action="https://formspree.io/f/manozrzv" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="border-button">
+                                <span class="btn-text">Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="contact-social">
+                        <h3>Connect with me</h3>
+                        <div class="social">
+                            <a href="https://wa.me/082239791258" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.instagram.com/hensigeraldi_?igsh=MTNyemJtMHJ4MW1neA==" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/share/1EoQDvdb29/" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-map" data-aos="fade-left" data-aos-delay="400">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4969.947684985823!2d124.8861880758621!3d1.5159031610177338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3287a06bc0f99f51%3A0x84b0eb65fef69c90!2sKost%20Pagar%20Miring!5e1!3m2!1sen!2sid!4v1748076626345!5m2!1sen!2sid" 
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo1.jpeg" alt="Logo">
+                    <span>Nzyy.</span>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                        <li><a href="index.html#certificates">Certificates</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                   <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://maps.app.goo.gl/zedZLjGwgmiZR1iF7" target="_blank" style="text-decoration: none; color: inherit;">
+                                Kost Pagar Miring, Manado
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="https://wa.me/6282239791258" target="_blank" style="text-decoration: none; color: inherit;">
+                                +62 822-3979-1258
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hensiirot100@gmail.com&su=Halo%20Hensi&body=Hai%20Hensi%2C%20saya%20tertarik%20dengan%20portfolio%20kamu!" style="text-decoration: none; color: inherit;">
+                                hensiirot100@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Follow Me</h3>
+                    <div class="social-icons">
+                        <a href="https://wa.me/082239791258" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/hensigeraldi_?igsh=MTNyemJtMHJ4MW1neA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1EoQDvdb29/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hensi Geraldi Irot. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 1000,
+            once: false,
+            offset: 120,
+            mirror: true,
+            easing: 'ease-in-out-quad'
+        });
+
+        // Toggle Menu Mobile - pastikan sama dengan di index.html
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const currentDisplay = navLinks.style.display;
+            navLinks.style.display = currentDisplay === 'flex' ? 'none' : 'flex';
+            
+            // Tambahan untuk animasi hamburger icon
+            const menuToggle = document.querySelector('.menu-toggle');
+            menuToggle.classList.toggle('active');
+        }
+
+        // Close menu ketika klik di luar navbar (untuk mobile)
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navbar = document.querySelector('.navbar');
+            
+            if (!navbar.contains(event.target) && window.innerWidth <= 768) {
+                navLinks.style.display = 'none';
+                menuToggle.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
