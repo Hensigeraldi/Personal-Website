@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hensigeraldi/Personal-Website/main/images/KEREN.jpg" alt="Logo" width="200"/>
+  <img src="https://raw.githubusercontent.com/Hensigeraldi/Personal-Website/main/images/keren.png" alt="Logo" width="200"/>
 </p>
 
 <h1 align="center">🌐 Personal Website</h1>
@@ -30,7 +30,7 @@ This website serves as my personal portfolio, thoughtfully crafted with HTML, CS
 
 ---
 
-## ⚙️ Installation 
+## ⚙️ Installation
 
 1. Clone this repo 
    ```bash
