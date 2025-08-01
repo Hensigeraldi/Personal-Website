@@ -9,20 +9,20 @@
 </p>
 
 <p align="center">
-  <a href="https://Hensigeraldi.github.io/Personal-Website/">🌍 Lihat Website</a> |
-  <a href="#features">✨ Fitur</a> |
-  <a href="#installation">⚙️ Instalasi</a> |
-  <a href="#contact">📬 Kontak</a>
+  <a href="https://Hensigeraldi.github.io/Personal-Website/">🌍 Visit MyWebsite</a> |
+  <a href="#features">✨ Features</a> |
+  <a href="#installation">⚙️ Installation</a> |
+  <a href="#contact">📬 Contact</a>
 </p>
 
 ---
 
-## 📌 Tentang Proyek
+## 📌 About
 This website serves as my personal portfolio, thoughtfully crafted with HTML, CSS, and JavaScript. It’s designed not only to showcase my profile and highlight the projects I’ve worked on, but also to provide a clear and simple way for people to connect with me. My goal is to create a professional yet approachable online presence that reflects both my skills and personality.
 
 ---
 
-## 🚀 Fitur
+## 🚀 Features
 - Responsive design (accessible on mobile phones and laptops)
 - Interactive particle animations
 - Contact page
@@ -30,7 +30,7 @@ This website serves as my personal portfolio, thoughtfully crafted with HTML, CS
 
 ---
 
-## ⚙️ Instalasi
+## ⚙️ Installation 
 
 1. Clone this repo 
    ```bash
