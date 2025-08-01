@@ -5,7 +5,7 @@
 <h1 align="center">🌐 Personal Website</h1>
 
 <p align="center">
-  Website portofolio pribadi saya — dibuat dengan <b>HTML, CSS, dan JavaScript</b>  
+  A personal portfolio website I built with <b>HTML, CSS, and JavaScript<b/> — created to highlight my work, share my projects, and make it easy to connect with me. 
 </p>
 
 <p align="center">
@@ -18,20 +18,20 @@
 ---
 
 ## 📌 Tentang Proyek
-Website ini merupakan portofolio pribadi saya untuk menampilkan profil, project, dan informasi kontak saya.
+This website serves as my personal portfolio, thoughtfully crafted with HTML, CSS, and JavaScript. It’s designed not only to showcase my profile and highlight the projects I’ve worked on, but also to provide a clear and simple way for people to connect with me. My goal is to create a professional yet approachable online presence that reflects both my skills and personality.
 
 ---
 
 ## 🚀 Fitur
-- Desain responsif (bisa diakses di HP & laptop)
-- Animasi partikel interaktif
-- Halaman kontak
-- Navigasi yang sederhana dan bersih
+- Responsive design (accessible on mobile phones and laptops)
+- Interactive particle animations
+- Contact page
+- Simple and clean navigation
 
 ---
 
 ## ⚙️ Instalasi
 
-1. Clone repo ini  
+1. Clone this repo 
    ```bash
    git clone https://github.com/Hensigeraldi/Personal-Website.git
