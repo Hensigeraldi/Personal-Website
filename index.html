@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hensi Geraldi Irot</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ai-chatbot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- Tambahkan di dalam <head> -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -28,7 +33,6 @@
         <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
     </nav>
     
-
     <!-- Home Section -->
     <section class="home" id="home">
         <div id="particles-js"></div>
@@ -39,10 +43,10 @@
                     <span class="cursor">|</span>
                 </h2><br>
             <p data-aos="fade-right" data-aos-delay="400">I am a web developer who specializes in building interactive, responsive, and functional websites for a variety of digital needs.</p><br>
+            <!-- Ganti bagian button dengan ini -->
             <button class="border-button" data-aos="fade-up" data-aos-delay="600" onclick="scrollToAbout()">
-                    <span class="btn-text">More About Me</span>
-                    <span class="arrow">&#8594;</span>
-                </a>
+                <span class="btn-text">More About Me</span>
+                <span class="arrow">&#8594;</span>
             </button> <br><br>
             <div class="social-icons">
                 <!-- Social icons dengan efek animasi -->
@@ -142,7 +146,7 @@
                     <div class="project-content">
                         <h3>Soil moisture monitoring and water prediction using machine learning</h3>
                         <p>My project in the Machine Learning course is designed to read soil moisture using soil moisture and predict liters of water using random forest machine learning to produce healthy and high-quality plants.</p>
-                        <a href="#" class="project-link">Esp32, Python Random Forest, Frontend : Html5 Css3 and javascript</a>
+                        <a href="https://github.com/Hensigeraldi/Soil-Moisture" class="project-link">Esp32, Python Random Forest, Frontend : Html5 Css3 and javascript</a>
                     </div>
                 </div>
                 
@@ -165,7 +169,7 @@
                     <div class="project-content">
                         <h3>E-Commerce</h3>
                         <p>My project this time is also a shopping website for various foods and drinks, a responsive display designed to give users a good shopping experience and will later be promoted to MSME partners.</p>
-                        <a href="https://team8.codefour22.kepri.pro/" class="project-link">Visit</a>
+                        <a href="https://github.com/notnat1/Food-Store" class="project-link">Visit</a>
                     </div>
                 </div>
             </div>
@@ -714,5 +718,455 @@
             });
         });
     </script>
+
+
+    <!-- AI Chatbot Widget (Embedded) -->
+    <div id="chatbotWidget" class="chatbot-widget">
+        <div class="chatbot-header">
+            <div class="header-content" onclick="toggleChatbot()">
+                <div class="bot-avatar">
+                    <img src="images/me.jpg" alt="AI Assistant">
+                </div>
+                <div class="bot-info">
+                    <h4>AI Assistant</h4>
+                    <p>Online • Ready to help</p>
+                </div>
+            </div>
+            <div class="chatbot-controls">
+                <button class="close-btn" onclick="handleCloseChatbot(event)">×</button>
+            </div>
+        </div>
+        
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chat-messages" id="chatMessages">
+                <div class="bot-message">
+                    <p>Hello! I'm Hensi's AI assistant. I can tell you about his skills, projects, experience, and more. What would you like to know?</p>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Chatbot Button -->
+    <div class="ai-chatbot-btn" onclick="toggleChatbot()">
+        <i class="fas fa-robot"></i>
+        <span class="pulse-effect"></span>
+        <span class="chat-notification">AI</span>
+    </div>
+    
+   <script>
+    // ==============================================
+    // CHATBOT JAVASCRIPT - LENGKAP
+    // ==============================================
+
+    // Chatbot State
+    let isChatbotOpen = false;
+    let conversationHistory = [];
+
+    // Handle Close Chatbot (FIXED)
+    function handleCloseChatbot(event) {
+        // Stop event propagation agar tidak trigger toggleChatbot dari parent
+        event.stopPropagation();
+        event.preventDefault();
+        
+        const chatbot = document.getElementById('chatbotWidget');
+        chatbot.classList.remove('active');
+        isChatbotOpen = false;
+    }
+
+    // Toggle Chatbot Function (FIXED)
+    function toggleChatbot() {
+        const chatbot = document.getElementById('chatbotWidget');
+        isChatbotOpen = !isChatbotOpen;
+        
+        if (isChatbotOpen) {
+            chatbot.classList.add('active');
+            setTimeout(() => {
+                const userInput = document.getElementById('userInput');
+                if (userInput) {
+                    userInput.focus();
+                }
+                scrollToBottom();
+            }, 300);
+        } else {
+            chatbot.classList.remove('active');
+        }
+    }
+
+
+
+    // Send Message Function
+    async function sendMessage() {
+        const userInput = document.getElementById('userInput');
+        const message = userInput.value.trim();
+        
+        if (!message) return;
+        
+        // Clear input immediately
+        userInput.value = '';
+        
+        // Add user message to chat
+        addMessage(message, 'user');
+        
+        // Show typing indicator dengan delay kecil
+        setTimeout(() => {
+            showTypingIndicator();
+        }, 300);
+        
+        try {
+            // Simulate AI thinking time
+            setTimeout(async () => {
+                const response = await fetchAIResponse(message);
+                hideTypingIndicator();
+                addMessage(response, 'bot');
+            }, 1000 + Math.random() * 1000); // Random delay 1-2 detik
+        } catch (error) {
+            console.error('Error:', error);
+            hideTypingIndicator();
+            addMessage('Sorry, I encountered an error. Please try again later.', 'bot');
+        }
+    }
+
+    // AI Response Function
+    async function fetchAIResponse(userMessage) {
+        // Add to conversation history
+        conversationHistory.push({ role: 'user', content: userMessage });
+        
+        // Get response from enhanced fallback
+        const response = getEnhancedFallbackResponse(userMessage);
+        
+        // Add to conversation history
+        conversationHistory.push({ role: 'assistant', content: response });
+        
+        // Keep only last 10 messages
+        if (conversationHistory.length > 10) {
+            conversationHistory = conversationHistory.slice(-10);
+        }
+        
+        return response;
+    }
+
+    // Enhanced Fallback Response System
+    function getEnhancedFallbackResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        // Greetings
+        if (/(hello|hi|hey|halo|hallo|hai)/i.test(message)) {
+            return "Hey there! 👋 I'm Hensi's AI assistant. I can help you learn about his skills and projects, discuss technology, programming, or just have a friendly chat. What's on your mind?";
+        }
+        
+        // How are you
+        else if (/(how are you|what's up|apa kabar|how do you do)/i.test(message)) {
+            return "I'm doing great! Ready to help you explore Hensi's portfolio or chat about technology. How about you?";
+        }
+        
+        // Thanks
+        else if (/(thank you|thanks|terima kasih|makasih)/i.test(message)) {
+            return "You're welcome! 😊 Happy to help. Is there anything else you'd like to know about Hensi or maybe discuss programming topics?";
+        }
+        
+        // Who are you
+        else if (/(your name|who are you|siapa kamu|what are you)/i.test(message)) {
+            return "I'm Hensi AI! 🤖 I'm an intelligent assistant created to represent Hensi Geraldi Irot and help visitors learn about his work. I can also chat about technology and programming in general!";
+        }
+        
+        // Programming
+        else if (/(programming|coding|learn code|belajar programming|koding)/i.test(message)) {
+            return "That's awesome you're interested in programming! 💻 Based on Hensi's journey, I'd recommend starting with web technologies (HTML/CSS/JavaScript) as they're very beginner-friendly. Hensi himself started there and expanded to backend, IoT, and machine learning. What specific area interests you?";
+        }
+        
+        // Technology
+        else if (/(tech|technology|teknologi|trend|latest)/i.test(message)) {
+            return "The tech world is exciting right now! 🚀 AI/ML is booming, web development frameworks keep evolving, and IoT is connecting everything. Hensi has experience in several of these areas. Any specific technology you're curious about?";
+        }
+        
+        // Career
+        else if (/(career|job|karir|pekerjaan|future|kerja)/i.test(message)) {
+            return "Career advice? Great topic! 💼 From Hensi's experience: build projects (they're better than just certificates), learn continuously, and don't be afraid to try new technologies. The tech field values practical skills and problem-solving abilities. What career direction are you considering?";
+        }
+        
+        // Projects
+        else if (/(project|portfolio|proyek|karya|work)/i.test(message)) {
+            return "Hensi has some cool projects! 🔥 There's an IoT soil monitoring system with machine learning, a scholarship selection system using SAW method, an e-commerce website, and more. Each shows different skills - from hardware programming to web development. Which type interests you most?";
+        }
+        
+        // Skills
+        else if (/(skill|ability|keahlian|expertise|technology stack)/i.test(message)) {
+            return "Hensi has a diverse skill set: 🛠️\n\n• Frontend: HTML5, CSS3, JavaScript\n• Backend: PHP, MySQL\n• IoT & Hardware: ESP32, sensors\n• Machine Learning: Python, Random Forest\n• Tools: Git, VS Code, Arduino\n\nHe's a versatile full-stack developer with hardware experience too!";
+        }
+        
+        // Experience
+        else if (/(experience|pengalaman|internship|kerja|work experience)/i.test(message)) {
+            return "Hensi gained practical experience through a 3-month internship at Pt Wapoga Mutiara Industri and numerous academic/personal projects. He believes in learning by building real things - which is why his portfolio includes everything from web apps to IoT systems!";
+        }
+        
+        // Certificates
+        else if (/(certificate|sertifikat|achievement|sertification|achievement)/i.test(message)) {
+            return "Hensi has earned several certifications: 📜\n\n• Java Programming (Dicoding)\n• Junior Web Developer (VSGA)\n• JavaScript (Myskill)\n• Web Programming (Dicoding)\n\nHe's committed to continuous learning and skill development!";
+        }
+        
+        // Contact
+        else if (/(contact|hubungi|email|phone|wa|telepon|number)/i.test(message)) {
+            return "You can contact Hensi through: 📞\n\n• WhatsApp: +62 822-3979-1258\n• Email: hensiirot100@gmail.com\n• Location: Manado, Indonesia\n• Instagram: @hensigeraldi_\n\nFeel free to reach out for collaborations or questions!";
+        }
+        
+        // Education
+        else if (/(education|school|kuliah|politeknik|study|belajar)/i.test(message)) {
+            return "Hensi is currently studying Informatics Engineering at Manado State Polytechnic. 🎓 He's gaining strong foundations in programming, algorithms, software development, and problem-solving skills through both academic and personal projects.";
+        }
+        
+        // Jokes
+        else if (/(joke|funny|humor|lucu|jokes)/i.test(message)) {
+            const jokes = [
+                "Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
+                "How many programmers does it take to change a light bulb? None, that's a hardware problem! 💡",
+                "Why was the JavaScript developer sad? Because he didn't know how to 'null' his feelings! 😄",
+                "What's a programmer's favorite hangout place? The Foo Bar! 🍻",
+                "Why do Java developers wear glasses? Because they can't C#! 👓"
+            ];
+            return jokes[Math.floor(Math.random() * jokes.length)];
+        }
+        
+        // Weather (unrelated but fun)
+        else if (/(weather|cuaca|rain|sun|hot|cold)/i.test(message)) {
+            return "I'm focused on tech topics rather than weather, but I can tell you that the forecast for learning new programming skills is always sunny! ☀️ Want to discuss something technical instead?";
+        }
+        
+        // Personal questions (redirect to professional)
+        else if (/(love|girlfriend|pacaran|relationship|personal)/i.test(message)) {
+            return "I'm here to discuss professional and technical topics related to Hensi's portfolio. Let's keep our conversation focused on his skills, projects, programming, or technology in general! 😊";
+        }
+        
+        // Goodbye
+        else if (/(bye|goodbye|see you|selamat tinggal|exit|quit)/i.test(message)) {
+            return "Thanks for chatting! 👋 Feel free to come back if you have more questions about Hensi's work or want to discuss technology. Have a great day!";
+        }
+        
+        // Help
+        else if (/(help|bantuan|what can you do|fitur)/i.test(message)) {
+            return "I can help you with: 🤖\n\n• Hensi's skills and experience\n• Project details and technologies\n• Programming advice and learning paths\n• Career guidance in tech\n• Technology trends discussion\n• And general friendly conversation!\n\nWhat would you like to know?";
+        }
+        
+        // Default response for unknown queries
+        else {
+            const randomResponses = [
+                "That's an interesting question! While I specialize in Hensi's portfolio and tech topics, I'd be happy to discuss programming, career advice, or help you understand his projects better.",
+                "I'm designed to help with Hensi's portfolio and technology discussions. Could you tell me more about what you're looking for? Maybe I can help with programming advice or project details!",
+                "I love chatting about technology and programming! While I might not have all answers, I can definitely help you explore Hensi's skills, projects, or discuss general tech topics.",
+                "Great question! I'm most knowledgeable about Hensi's background and technology in general. Want to discuss his projects, learn about programming, or explore career paths in tech?",
+                "That's a thoughtful question! I'm here to help you learn about Hensi's technical skills and experience. Maybe ask about his projects, programming languages he uses, or get career advice?"
+            ];
+            return randomResponses[Math.floor(Math.random() * randomResponses.length)];
+        }
+    }
+
+    // ==============================================
+    // UI FUNCTIONS
+    // ==============================================
+
+    // Add message to chat with smooth animation
+    function addMessage(text, sender) {
+        const chatMessages = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `${sender}-message`;
+        
+        // Format text dengan line breaks dan emoji support
+        const formattedText = text.replace(/\n/g, '<br>');
+        messageDiv.innerHTML = `<p>${formattedText}</p>`;
+        
+        chatMessages.appendChild(messageDiv);
+        
+        // Auto scroll ke bawah dengan smooth behavior
+        scrollToBottom();
+        
+        // Add animation
+        messageDiv.style.opacity = '0';
+        messageDiv.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+            messageDiv.style.transition = 'all 0.3s ease';
+            messageDiv.style.opacity = '1';
+            messageDiv.style.transform = 'translateY(0)';
+        }, 10);
+    }
+
+    // Scroll to bottom of chat
+    function scrollToBottom() {
+        const chatMessages = document.getElementById('chatMessages');
+        // Gunakan setTimeout untuk memastikan DOM sudah update
+        setTimeout(() => {
+            chatMessages.scrollTo({
+                top: chatMessages.scrollHeight,
+                behavior: 'smooth'
+            });
+        }, 100);
+    }
+
+    // Show typing indicator
+    function showTypingIndicator() {
+        const chatMessages = document.getElementById('chatMessages');
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'typing-indicator active';
+        typingDiv.innerHTML = '<p>AI is thinking<span class="typing-dots"><span>.</span><span>.</span><span>.</span></span></p>';
+        chatMessages.appendChild(typingDiv);
+        scrollToBottom();
+    }
+
+    // Hide typing indicator
+    function hideTypingIndicator() {
+        const typingIndicator = document.querySelector('.typing-indicator');
+        if (typingIndicator) {
+            typingIndicator.remove();
+        }
+    }
+
+    // ==============================================
+    // EVENT LISTENERS & INITIALIZATION
+    // ==============================================
+
+    // Enter key support
+    document.addEventListener('DOMContentLoaded', function() {
+        const userInput = document.getElementById('userInput');
+        if (userInput) {
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        }
+        
+        // Auto show greeting after 10 seconds
+        setTimeout(() => {
+            if (!isChatbotOpen) {
+                showChatbotGreeting();
+            }
+        }, 10000);
+    });
+
+    // Show chatbot greeting notification (FIXED VERSION)
+    function showChatbotGreeting() {
+        // Check if notification already exists
+        if (document.getElementById('chatbotGreeting')) return;
+        
+        const notification = document.createElement('div');
+        notification.id = 'chatbotGreeting';
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 200px;
+            right: 30px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 9997;
+            max-width: 250px;
+            border-left: 4px solid #667eea;
+            animation: slideInRight 0.5s ease;
+        `;
+        
+        notification.innerHTML = `
+            <p style="margin: 0 0 10px 0; color: #333; font-size: 14px; line-height: 1.4;">
+                Need help? Ask my AI assistant about my skills and projects! 🤖
+            </p>
+            <button id="greetingBtn" style="
+                background: #667eea; 
+                color: white; 
+                border: none; 
+                padding: 8px 15px; 
+                border-radius: 5px; 
+                cursor: pointer; 
+                font-size: 12px; 
+                width: 100%; 
+                transition: background 0.3s;"
+            >
+                Open AI Assistant
+            </button>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Direct event binding - cara paling reliable
+        setTimeout(() => {
+            const button = document.getElementById('greetingBtn');
+            if (button) {
+                button.onclick = function() {
+                    toggleChatbot();
+                    // Remove greeting immediately when clicked
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                };
+            }
+        }, 100);
+        
+        // Auto remove after 8 seconds
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.style.animation = 'slideOutRight 0.5s ease';
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100px)';
+                setTimeout(() => {
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                }, 500);
+            }
+        }, 8000);
+    }
+
+    // Auto focus ketika chatbot dibuka
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.chatbot-header') || e.target.closest('.ai-chatbot-btn')) {
+            setTimeout(() => {
+                const userInput = document.getElementById('userInput');
+                if (userInput && isChatbotOpen) {
+                    userInput.focus();
+                }
+            }, 400);
+        }
+    });
+
+    // Close chatbot when clicking outside (optional)
+    document.addEventListener('click', function(e) {
+        const chatbot = document.getElementById('chatbotWidget');
+        const chatbotBtn = document.querySelector('.ai-chatbot-btn');
+        
+        if (isChatbotOpen && chatbot && !chatbot.contains(e.target) && !chatbotBtn.contains(e.target)) {
+            closeChatbot();
+        }
+    });
+
+    // ==============================================
+    // DEBUGGING HELPER (optional)
+    // ==============================================
+
+    // Uncomment untuk debugging
+    /*
+    console.log('AI Chatbot loaded successfully!');
+    console.log('Available functions:');
+    console.log('- toggleChatbot()');
+    console.log('- sendMessage()');
+    console.log('- addMessage()');
+    console.log('- scrollToBottom()');
+
+    // Test function
+    window.testChatbot = function() {
+        console.log('Testing chatbot...');
+        addMessage('Test user message', 'user');
+        showTypingIndicator();
+        setTimeout(() => {
+            hideTypingIndicator();
+            addMessage('Test bot response', 'bot');
+        }, 2000);
+    };
+    */
+    </script>
+
 </body>
 </html>
